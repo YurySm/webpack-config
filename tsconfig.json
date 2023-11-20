@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    // ERROR TS2686: 'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.
+    //"jsx": "react",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // если библиотека не имеет default import,
+    // лоадеры автоматом создают их
+    // вместо import * as React from 'react'
+    // import React from 'react'
+    "allowSyntheticDefaultImports": true,
+    //esModuleInterop позволяет работать с пакетами, которые используют
+    // common js как с обычными пакетами с помощью import
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
